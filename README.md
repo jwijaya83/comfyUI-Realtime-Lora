@@ -1,6 +1,7 @@
 # ComfyUI Realtime LoRA Trainer
 
-Train LoRAs directly inside ComfyUI. Drop in your images, queue, get a LoRA.
+Train LoRAs directly inside ComfyUI. Capture a face, a style, or a subject from your reference images and apply it to new generations - all within the same workflow. Useful for subject consistency across a project, style matching, or rapid iteration when you need a LoRA but don't want to context-switch into separate training tools. 
+
 
 ## What This Does
 
