@@ -42,6 +42,8 @@ You need to install the training backend(s) separately:
 1. Install AI-Toolkit: https://github.com/ostris/ai-toolkit
 2. Follow their install instructions
 
+**RTX 50-series GPUs (AI-Toolkit only):** Blackwell GPUs (RTX 5080/5090) require PyTorch 2.7+ with CUDA 12.8 support. The standard AI-Toolkit installation may not work out of the box. A community installer is available at https://github.com/omgitsgb/ostris-ai-toolkit-50gpu-installer that handles the correct PyTorch/CUDA versions. Note: sd-scripts for SDXL training is unaffected - this applies only to AI-Toolkit.
+
 You don't need to open either environment after installation. The node just needs the path to where you installed them.
 
 ## Installation
