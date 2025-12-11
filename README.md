@@ -106,20 +106,20 @@ There are example workflows included in the custom_nodes/comfyUI-Realtime-Lora f
 - VRAM presets for different GPU sizes
 - Settings are saved between sessions
 
-## Defaults
+## Defaults (Z-Image example)
 
-- 500 training steps
-- Learning rate 0.0005
+- 400 training steps
+- Learning rate 0.0002
 - LoRA rank 16
 - Low VRAM mode (768px)
 
 These defaults are starting points for experimentation, not ideal values. Every subject and style is different.
 
 **Learning rate advice:**
-- 0.0005 trains fast but can overshoot, causing artifacts or burning in the subject too hard
+- 0.0002 trains fast but can overshoot, causing artifacts or burning in the subject too hard
 - Try lowering to 0.0001 or 0.00005 for more stable, gradual training
 - If your LoRA looks overcooked or the subject bleeds into everything, lower the learning rate
-- If your LoRA is too weak after 500 steps, try more steps before raising the learning rate
+- If your LoRA is too weak after 400 steps, try more steps before raising the learning rate
 
 ## Credits
 
