@@ -1,8 +1,8 @@
 {
   "id": "92112d97-bb64-4b44-86f2-ea5691ef8f6e",
   "revision": 0,
-  "last_node_id": 96,
-  "last_link_id": 211,
+  "last_node_id": 97,
+  "last_link_id": 217,
   "nodes": [
     {
       "id": 87,
@@ -110,7 +110,7 @@
           "links": [
             144,
             179,
-            207
+            213
           ]
         }
       ],
@@ -190,7 +190,7 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 210
+          "link": 216
         }
       ],
       "outputs": [
@@ -427,7 +427,7 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 211
+          "link": 217
         }
       ],
       "outputs": [
@@ -483,7 +483,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            206
+            212
           ]
         }
       ],
@@ -552,14 +552,14 @@
           "name": "analysis_json",
           "type": "STRING",
           "links": [
-            209
+            215
           ]
         },
         {
           "name": "lora_path",
           "type": "STRING",
           "links": [
-            208
+            214
           ]
         }
       ],
@@ -689,11 +689,11 @@
       "bgcolor": "#533"
     },
     {
-      "id": 96,
+      "id": 97,
       "type": "ZImageSelectiveLoRALoader",
       "pos": [
-        -2596.4263641362954,
-        -2013.6169877779414
+        -2587.0175501933404,
+        -2013.730591397878
       ],
       "size": [
         500,
@@ -706,24 +706,24 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 206
+          "link": 212
         },
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 207
+          "link": 213
         },
         {
           "name": "lora_path_opt",
           "shape": 7,
           "type": "STRING",
-          "link": 208
+          "link": 214
         },
         {
           "name": "analysis_json",
           "shape": 7,
           "type": "STRING",
-          "link": 209
+          "link": 215
         }
       ],
       "outputs": [
@@ -731,14 +731,14 @@
           "name": "model",
           "type": "MODEL",
           "links": [
-            210
+            216
           ]
         },
         {
           "name": "clip",
           "type": "CLIP",
           "links": [
-            211
+            217
           ]
         },
         {
@@ -748,54 +748,57 @@
         }
       ],
       "properties": {
-        "aux_id": "ShootTheSound/comfyUI-Realtime-Lora",
-        "ver": "a4e5b6615b5ded71abdca1558663ddd6ee665a3c",
-        "Node name for S&R": "ZImageSelectiveLoRALoader",
         "ue_properties": {
           "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.1"
-        }
+          "input_ue_unconnectable": {}
+        },
+        "aux_id": "ShootTheSound/comfyUI-Realtime-Lora",
+        "ver": "a4e5b6615b5ded71abdca1558663ddd6ee665a3c",
+        "Node name for S&R": "ZImageSelectiveLoRALoader"
       },
       "widgets_values": [
         "FLUX\\1950s Hollywood glamour..safetensors",
         1,
         "Default",
         "Custom",
-        "Custom",
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
+        true,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        true,
+        0.9500000000000001,
         false,
         1,
         false,
@@ -819,11 +822,7 @@
         false,
         1,
         false,
-        1,
-        false,
-        1,
-        0.55,
-        0.5
+        1
       ],
       "ndSuperSelectorEnabled": false,
       "ndPowerEnabled": false
@@ -927,48 +926,48 @@
       "MODEL"
     ],
     [
-      206,
+      212,
       90,
       0,
-      96,
+      97,
       0,
       "MODEL"
     ],
     [
-      207,
+      213,
       76,
       0,
-      96,
+      97,
       1,
       "CLIP"
     ],
     [
-      208,
+      214,
       86,
       4,
-      96,
+      97,
       2,
       "STRING"
     ],
     [
-      209,
+      215,
       86,
       3,
-      96,
+      97,
       3,
       "STRING"
     ],
     [
-      210,
-      96,
+      216,
+      97,
       0,
       70,
       0,
       "MODEL"
     ],
     [
-      211,
-      96,
+      217,
+      97,
       1,
       74,
       0,
@@ -979,10 +978,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7972024500000007,
+      "scale": 0.8769226950000015,
       "offset": [
-        4697.743439193859,
-        2487.0602116858563
+        4310.435508652168,
+        2282.058710735065
       ]
     },
     "frontendVersion": "1.34.8",

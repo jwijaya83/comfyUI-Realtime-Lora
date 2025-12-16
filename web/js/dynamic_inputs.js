@@ -267,8 +267,8 @@ app.registerExtension({
 
             const node = this;
 
-            // Sanitize all strength widget values during restoration
-            // ComfyUI may deserialize them as strings, causing "Custom" or other corrupt values
+            // Sanitize strength widget values during restoration (only if corrupt)
+            // ComfyUI deserializes as strings, but parseFloat handles this correctly
             setTimeout(() => {
                 const config = SELECTIVE_LOADER_PRESETS[nodeData.name];
                 if (!config) return;
@@ -276,10 +276,17 @@ app.registerExtension({
                 for (const blockName of config.blocks) {
                     const strWidget = node.widgets.find(w => w.name === blockName + "_str");
                     if (strWidget) {
-                        // Force to number, default to 1.0 if invalid
+                        // Only fix truly corrupt values (non-numeric strings)
+                        // Preserve valid numbers including 0.0, negatives, etc.
                         let val = parseFloat(strWidget.value);
-                        if (isNaN(val)) val = 1.0;
-                        strWidget.value = val;
+                        if (isNaN(val)) {
+                            // Value is corrupt (e.g., "Custom" from old workflows)
+                            // Only NOW do we default to 1.0
+                            val = 1.0;
+                            strWidget.value = val;
+                        }
+                        // If val is a valid number (including 0.0), keep the original value
+                        // Don't overwrite it
                     }
                 }
 
@@ -289,7 +296,7 @@ app.registerExtension({
                 }
 
                 node.setDirtyCanvas(true);
-            }, 100); // Slightly longer delay to ensure widgets are fully restored
+            }, 150); // Longer delay to ensure ComfyUI finishes deserializing first
         };
 
         // Hook onExecuted to store analysis data when we receive it
@@ -371,9 +378,12 @@ app.registerExtension({
                 const valueX = sliderX + sliderWidth + gap;
 
                 const enabled = Boolean(toggle.value);
-                // Ensure strengthVal is a number (old workflows may have strings)
+                // Read strength value (ComfyUI may deserialize as string)
                 let strengthVal = parseFloat(strength.value);
-                if (isNaN(strengthVal)) strengthVal = 1.0;
+                if (isNaN(strengthVal)) {
+                    // Fallback for corrupt data - should rarely happen after onConfigure fix
+                    strengthVal = 1.0;
+                }
 
                 // Get impact score from analysis if available
                 let impactScore = null;
